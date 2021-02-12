@@ -1,4 +1,5 @@
 **_Creational Design Pattern_**
+---------------------------------
     
   - Creational Design Pattern used to create variable in verity of phases.
     
@@ -39,6 +40,7 @@
     and that’s it.
          
 **_Structural Design Pattern_**
+---------------------------------
     
   - Structural Design Pattern used to 
     
@@ -73,6 +75,91 @@
       |_Blue
       |_Red
       
+    **Composite Design Pattern :**
+    - Composite design pattern compose objects into tree structures to represent whole-part hierarchies. 
+      Composite lets clients treat individual objects and compositions of objects uniformly.
+    - hierarchical structure and needs generic functionality, aggregate data across a hierarchy,  treat composite and individual objects uniformly.
+    - Iterator, Visitor and Flyweight Design Pattern also be a part with Composite Design Pattern.
+    
+    - In other words, This pattern used when your data is tree like formation. node which contain objects and parent node which contain child then this method used.
+      Parent method is component which contain list of child and other operation related to that. Where as Child or leaf node contain only data.
+    - Component                         <---|              <---|
+                                            ^                  ^
+      |_CompositeAccount     -------------->|              <---|
+                                                               ^
+      |_AccountStatement     --------------------------------->|
+    
+    **Decorator Design Pattern :**
+    - Decorator design pattern is used to add additional features or behaviors to a particular instance of a class, while not modifying the other instances of same class. 
+    - Decorators provide a flexible alternative to sub-classing for extending functionality. Please note that the description above implies that decorating an object changes 
+      its behavior but not its interface.
+    -   
+    
+    **Facade Design Pattern :**
+    - Facade design pattern provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+    - The facade pattern is appropriate when we have a complex system that we want to expose to clients in a simplified way.
+    - Facade also decouples the code that uses the system from the details of the subsystems, making it easier to modify the system later.
+    - Example, PC startup : After press button you doesn't have idea how hardware and software configure and load OS.
+               DB connection : You just place connection.create() but don't have idea how they connect what driver required pool size and etc param.
+    
+    **Flyweight Design Pattern :**
+        - flyweight design pattern enables use sharing of objects to support large numbers of fine-grained objects efficiently. 
+          A flyweight is a shared object that can be used in multiple contexts simultaneously. The flyweight acts as an independent object in each context.
+        - When we need a large number of similar objects that are unique in terms of only a few parameters and most of the stuffs are common in general.
+        - Intrinsic Attribute : Fixed or common value containing variable for all
+          Extrinsic Attribute : Changeable or Dynamic value containing variable
+        - Example : Real world : Pen, Common image used in verity of place with different size.
+                    Program Oriented : java.lang.String
+                        
+        - FlywayFactory  --------------------------------
+                                                        |
+                                             ---------------------------
+                                                    FlyWeight
+                                             ---------------------------
+                                                    Intrinsic
+                                                Operation(Extrinsic)
+                                             ---------------------------
+                                                        |                        
+          Client         --------------------------------
+
+    **Proxy Design Pattern :**
+        - A proxy object provide a surrogate or placeholder for another object to control access to it. 
+          A proxy is basically a substitute for an intended object which we create due to many reasons e.g. security reasons or cost associated with creating fully initialized original object.
+        - A proxy object hides the original object and control access to it. We can use proxy when we may want to use a class that can perform as an interface to something else.
+        - Usage : In hibernate Lazy loading, Place additional security around actual object, Network security
+        - Type : Remote Proxy, Virtual Proxy, Protection Proxy, Smart Proxy
+        - Decorators focus on adding responsibilities, but proxies focus on controlling the access to an object.    
     
 **_Behavioural Design Pattern_**
+---------------------------------
+    
+  - Design patterns that identify common communication patterns between objects. 
 
+    **Visitor Design Pattern :**
+    - A proxy object provide a surrogate or placeholder for another object to control access to it. 
+    - Design patterns that identify common communication patterns between objects.
+    
+    **Observer Design Pattern :**
+    - Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. 
+      It is also referred to as the publish-subscribe pattern.
+    - Objects're loosely coupled.
+    - Real world examples : Social Media (Get notification / unsubscribe), Application update notification, Mouse / Keyboard event base notification
+    
+    **State Design Pattern :**
+    - A State allows an object to alter its behavior when its internal state changes.
+    - The state pattern solves problems where an object should change its behavior when its internal state changes. 
+      Also, adding new states should not affect the behavior of existing states.
+    - Separate concrete class per possible state of an object. 
+    - Each concrete state object will have logic to accept or reject a state transition request based on it’s present state and context information passed to it as method arguments.
+    - Real world examples : TV - On / Off buttons, Machine process, Thread state
+    - The strategy pattern provides a better alternative to subclassing, while in state pattern – behavior is encapsulated in separate classes.
+      Yet both promote the composition and the delegation over inheritance. 
+      
+    **Strategy Design Pattern :**
+    - Strategy pattern enables a client code to choose from a family of related but different algorithms and gives it a simple way to choose any of the algorithm in runtime 
+      depending on the client context.
+    - The important point is that these implementations are interchangeable – based on task a implementation may be picked without disturbing the application workflow.
+    - This pattern is based on Open/closed principle. We don’t need to modify the context [closed for modification], but can choose and add any implementation [open for extension].
+    - In Strategy pattern, we first create an abstraction of algorithm. This is an interface having the abstract operation. 
+      Then we create implementations of this abstraction and these are called strategies.
+      A client will always call the abstraction, and will pass a context object. This context object will decide which strategy to use.
