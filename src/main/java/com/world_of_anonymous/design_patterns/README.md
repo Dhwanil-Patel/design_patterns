@@ -134,10 +134,42 @@
 ---------------------------------
     
   - Design patterns that identify common communication patterns between objects. 
-
+    
+    **Chain of Responsibility :**
+    - The main Objective of this pattern is that it avoids coupling the sender of the request to the receiver.
+    - "Gives more than one object an opportunity to handle a request by linking receiving objects together."
+    - For example, event handling mechanism in windows OS where events can be generated from either mouse, keyboard or some automatic generated events. 
+      All such events can be handled by multiple handlers and correct handler is found on runtime.
+      
+    **Command Design Pattern :**  
+    - Useful to abstract business logic into discrete actions which we call commands.
+    - This command object helps in loose coupling between two classes where one class (invoker) shall call a method on other class (receiver) to perform a business operation.
+    - Object is used to encapsulate all information needed to perform an action, a business operation or trigger an event e.g. method name, receiver object reference 
+      and method parameter values, if any. This object is called command.
+      
+    **Iterator Design Pattern :**  
+    - An Iterator pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+    - Traversing the collection of objects in a defined manner.
+    
+    **Mediator Design Pattern :**  
+    - Mediator pattern defines an object that encapsulates how a set of objects interact. 
+    - Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets us vary their interaction independently.
+    - Loosely coupled communication between objects 
+    - Mediator helps to facilitate the interaction between objects in a manner in that objects are not aware of the existence of other objects. 
+      Objects depend only on a single mediator class instead of being coupled to dozens of other objects.
+    - Example, Airbus traffic control system, Chat application
+    
     **Visitor Design Pattern :**
     - A proxy object provide a surrogate or placeholder for another object to control access to it. 
     - Design patterns that identify common communication patterns between objects.
+    
+    **Memento Design Pattern :**
+    - Memento pattern is used to restore state of an object to a previous state. It is also known as snapshot pattern.
+    - The intent of memento pattern is to capture the internal state of an object without violating encapsulation 
+      and thus providing a mean for restoring the object into initial state when needed.
+    - rollback or undo, commit - rollback, 
+    - Originator, Caretaker, Memento
+    - A memento must be in immutable object so that no one can change it’s state once created. 
     
     **Observer Design Pattern :**
     - Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. 
@@ -163,3 +195,18 @@
     - In Strategy pattern, we first create an abstraction of algorithm. This is an interface having the abstract operation. 
       Then we create implementations of this abstraction and these are called strategies.
       A client will always call the abstraction, and will pass a context object. This context object will decide which strategy to use.
+
+    **Template Design Pattern :**
+    - Used when,
+      - We have pre-defined steps to achieve some algorithm.
+      - We want to avoid duplicating code, moving the common implementation and steps in the base class.
+
+    **Visitor Design Pattern :**
+    - The visitor design pattern is a way of separating an algorithm from an object structure on which it operates. 
+    - A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures. 
+    - It is one way to follow the open/closed principle (one of SOLID design principles).
+    - Above design flexibility allows to add methods to any object hierarchy without modifying the code written for hierarchy. 
+      Rather double dispatch mechanism is used to implement this facility. 
+    - Double dispatch is a special mechanism that dispatches a function call to different concrete functions depending on the runtime types of two objects involved in the call.
+    - Ex. routers can be configured for additional environments in future, without much modifications in source code.
+          
