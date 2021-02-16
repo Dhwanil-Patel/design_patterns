@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="supportService" class="com.world_of_anonymous.design_patterns.structural_design_pattern.chainofresponsibility_design_pattern.service.impl.SupportService">
+        <property name="handler" ref="frontDeskSupport"></property>
+    </bean>
+
+    <bean id="frontDeskSupport" class="com.world_of_anonymous.design_patterns.structural_design_pattern.chainofresponsibility_design_pattern.service.impl.FrontDeskSupport">
+        <property name="next" ref="supervisorSupport"></property>
+    </bean>
+
+    <bean id="supervisorSupport" class="com.world_of_anonymous.design_patterns.structural_design_pattern.chainofresponsibility_design_pattern.service.impl.SupervisorSupport">
+        <property name="next" ref="managerSupport"></property>
+    </bean>
+
+    <bean id="managerSupport" class="com.world_of_anonymous.design_patterns.structural_design_pattern.chainofresponsibility_design_pattern.service.impl.ManagerSupport">
+        <property name="next" ref="directorSupport"></property>
+    </bean>
+
+    <bean id="directorSupport" class="com.world_of_anonymous.design_patterns.structural_design_pattern.chainofresponsibility_design_pattern.service.impl.DirectorSupport">
+    </bean>
+</beans>
