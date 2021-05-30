@@ -93,7 +93,9 @@
     - Decorator design pattern is used to add additional features or behaviors to a particular instance of a class, while not modifying the other instances of same class. 
     - Decorators provide a flexible alternative to sub-classing for extending functionality. Please note that the description above implies that decorating an object changes 
       its behavior but not its interface.
-    -   
+    - You have an instance, and you put another instance inside of it. They both support the same (or similar) interfaces. The one on the outside is a “decorator.” 
+      You use the one on the outside. It either masks, changes, or pass-troughs the methods of the instance inside of it.
+    -  
     
     **Facade Design Pattern :**
     - Facade design pattern provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
